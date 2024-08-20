@@ -39,7 +39,18 @@ app.get('/api/agents', (req, res) => {
   res.json(users);
 });
 
+// Route voor serverstatus
+app.get('/api/status', (req, res) => {
+  const status = {
+    statusCode: 200,
+    message: 'OK',
+    description: 'The server is up and running smoothly.'
+  };
+  res.json(status);
+});
+
 // Start de server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
